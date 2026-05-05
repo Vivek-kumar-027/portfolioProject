@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vivek DevOps Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: radial-gradient(circle at top, #0f172a, #020617);
+    }
+
+    .page {
+      margin-top: 80px;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="text-white">
+
+<div class="flex min-h-screen">
+
+  <!-- Sidebar -->
+  <aside class="w-64 bg-[#020617] p-6 border-r border-gray-800 fixed h-full">
+
+    <div class="mb-8">
+      <h2 class="text-xl font-bold text-blue-500">Vivek Cloud</h2>
+      <p class="text-gray-400 text-sm">Cloud & DevOps Engineer</p>
+    </div>
+
+    <nav class="space-y-4 text-gray-400">
+      <a data-page="home" class="nav-link cursor-pointer block hover:text-blue-400">Home</a>
+      <a data-page="about" class="nav-link cursor-pointer block hover:text-blue-400">About</a>
+      <a data-page="skills" class="nav-link cursor-pointer block hover:text-blue-400">Skills</a>
+      <a data-page="projects" class="nav-link cursor-pointer block hover:text-blue-400">Projects</a>
+      <a data-page="contact" class="nav-link cursor-pointer block hover:text-blue-400">Contact</a>
+    </nav>
+
+  </aside>
+
+  <!-- Main Content -->
+  <main class="flex-1 p-10 ml-64">
+
+    <!-- HOME -->
+    <section id="home" class="page mt-0">
+      <div class="flex justify-between items-center">
+
+        <div>
+          <p class="text-gray-400">Hi, I'm</p>
+          <h1 class="text-5xl font-bold">
+            Vivek <span class="text-blue-500">Kumar</span>
+          </h1>
+          <h2 class="text-xl text-blue-400 mt-2">DevOps Engineer</h2>
+
+          <p class="mt-4 text-gray-400 max-w-lg">
+            I help teams build, deploy and scale cloud-native applications using AWS, Docker and Kubernetes.
+          </p>
+
+          <div class="mt-6 flex gap-4">
+            <button id="projectsBtn" class="bg-blue-500 px-6 py-2 rounded-lg hover:bg-blue-600">
+              View Projects
+            </button>
+            <button id="contactBtn" class="border border-gray-600 px-6 py-2 rounded-lg">
+              Contact Me
+            </button>
+          </div>
+
+          <!-- Open to Work -->
+          <div class="mt-4 bg-[#020617] border border-gray-800 px-4 py-2 rounded-lg text-sm text-green-400">
+            🚀 Open to Work - DevOps / Cloud Roles
+          </div>
+        </div>
+
+        <!-- Profile -->
+        <div class="relative">
+          <div class="w-64 h-64 bg-blue-500 blur-3xl opacity-30 rounded-full absolute"></div>
+          <img src="1770623605231.jpg"
+               class="w-64 h-64 rounded-full border-4 border-blue-500 relative">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="page">
+      <h1 class="text-4xl font-bold mb-4">About Me</h1>
+      <p class="text-gray-400 max-w-xl">
+        I am a passionate DevOps Engineer focused on cloud infrastructure, automation, and CI/CD pipelines.
+        I love building scalable systems using AWS and modern tools.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="page">
+      <h1 class="text-4xl font-bold mb-6">Skills</h1>
+
+      <div class="flex flex-wrap gap-4">
+        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">AWS</span>
+        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Docker</span>
+        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Kubernetes</span>
+        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Jenkins</span>
+        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Terraform</span>
+        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Linux</span>
+        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Git</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="page">
+      <h1 class="text-4xl font-bold mb-6">Projects</h1>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <div class="bg-[#020617] p-6 rounded-xl border border-gray-800">
+          <h4 class="text-lg font-semibold">AWS 3-Tier App</h4>
+          <p class="text-gray-400 mt-2">
+            Deployed scalable web application using EC2, RDS, ALB.
+          </p>
+        </div>
+
+        <div class="bg-[#020617] p-6 rounded-xl border border-gray-800">
+          <h4 class="text-lg font-semibold">CI/CD Pipeline</h4>
+          <p class="text-gray-400 mt-2">
+            Built pipeline using Jenkins, Docker & GitHub.
+          </p>
+        </div>
+
+        <div class="bg-[#020617] p-6 rounded-xl border border-gray-800">
+          <h4 class="text-lg font-semibold">Kubernetes App</h4>
+          <p class="text-gray-400 mt-2">
+            Deployed microservices using Kubernetes.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page">
+      <h1 class="text-4xl font-bold mb-6">Contact Me</h1>
+
+      <div class="bg-[#020617] p-6 rounded-xl border border-gray-800 max-w-xl">
+
+        <p class="text-gray-400 mb-6">
+          Feel free to reach out for opportunities or collaboration.
+        </p>
+
+        <div class="space-y-4 text-gray-300">
+
+          <p>📞 <strong>Phone:</strong>
+            <a href="tel:+919999999999" class="text-blue-400 hover:underline">+91 99999 99999</a>
+          </p>
+
+          <p>📧 <strong>Email:</strong>
+            <a href="mailto:yourmail@gmail.com" class="text-blue-400 hover:underline">yourmail@gmail.com</a>
+          </p>
+
+          <p>💼 <strong>LinkedIn:</strong>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-blue-400 hover:underline">
+              linkedin.com/in/yourprofile
+            </a>
+          </p>
+
+          <p>📸 <strong>Instagram:</strong>
+            <a href="https://instagram.com/yourprofile" target="_blank" class="text-blue-400 hover:underline">
+              instagram.com/yourprofile
+            </a>
+          </p>
+
+          <p>💬 <strong>WhatsApp:</strong>
+            <a href="https://wa.me/919999999999" target="_blank" class="text-blue-400 hover:underline">
+              Chat on WhatsApp
+            </a>
+          </p>
+
+          <p>💻 <strong>GitHub:</strong>
+            <a href="https://github.com/yourusername" target="_blank" class="text-blue-400 hover:underline">
+              github.com/yourusername
+            </a>
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<!-- JS -->
+<script>
+  const links = document.querySelectorAll(".nav-link");
+  const pages = document.querySelectorAll(".page");
+
+  function showAll() {
+    pages.forEach(p => p.style.display = "block");
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  function showOnly(id) {
+    pages.forEach(p => {
+      p.style.display = (p.id === id) ? "block" : "none";
+    });
+
+    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+  }
+
+  links.forEach(link => {
+    link.addEventListener("click", () => {
+      const id = link.getAttribute("data-page");
+
+      links.forEach(l => l.classList.remove("text-blue-400"));
+      link.classList.add("text-blue-400");
+
+      if (id === "home") {
+        showAll();
+      } else {
+        showOnly(id);
+      }
+    });
+  });
+
+  // Buttons
+  document.getElementById("projectsBtn").onclick = () => showOnly("projects");
+  document.getElementById("contactBtn").onclick = () => showOnly("contact");
+
+  // Default
+  showAll();
+</script>
+
+</body>
+</html>
