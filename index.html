@@ -1,241 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vivek DevOps Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vivek DevOps Portfolio</title>
 
-  <!-- Tailwind -->
-  <script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 
-  <style>
-    body {
-      background: radial-gradient(circle at top, #0f172a, #020617);
-    }
+<style>
+body {
+  background: radial-gradient(circle at top, #0f172a, #020617);
+  overflow-x: hidden;
+}
 
-    .page {
-      margin-top: 80px;
-      animation: fadeIn 0.4s ease;
-    }
+/* Section Card */
+.section-card {
+  background: rgba(2, 6, 23, 0.7);
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  padding: 25px;
+  margin-top: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+/* Sidebar */
+.sidebar {
+  width: 250px;
+}
+
+/* Mobile Navbar */
+.mobile-navbar {
+  display: none;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background: #020617;
+  padding: 20px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+.mobile-menu.active { left: 0; }
+
+/* Cursor Glow */
+#cursor-glow {
+  position: fixed;
+  width: 250px;
+  height: 250px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(59,130,246,0.2), transparent 70%);
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+}
+
+/* Skill Icon */
+.skill-icon {
+  width: 36px;
+  height: 36px;
+}
+
+/* Skill Pill */
+.skill-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  background: #020617;
+  border: 1px solid #1f2937;
+  border-radius: 999px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+  transition: 0.3s;
+  white-space: nowrap;
+}
+.skill-box:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(59,130,246,0.3);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+
+  .mobile-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: #020617;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1100;
+    border-bottom: 1px solid #1f2937;
+  }
+
+  .sidebar { display: none; }
+
+  main {
+    margin-left: 0 !important;
+    padding: 20px !important;
+    margin-top: 70px;
+  }
+
+  #home > div {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  img.profile {
+    width: 150px !important;
+    height: 150px !important;
+  }
+
+  /* Smaller icons */
+  .skill-icon {
+    width: 22px;
+    height: 22px;
+  }
+}
+</style>
 </head>
 
 <body class="text-white">
 
+<!-- Cursor Glow -->
+<div id="cursor-glow"></div>
+
+<!-- Mobile Navbar -->
+<div class="mobile-navbar">
+  <h2 class="text-lg font-bold text-blue-500">My Portfolio</h2>
+  <div onclick="toggleMenu()" class="text-2xl cursor-pointer">☰</div>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu">
+  <h2 class="text-xl text-blue-500 mb-6">Menu</h2>
+  <nav class="space-y-4">
+    <a data-page="home" class="nav-link block">Home</a>
+    <a data-page="about" class="nav-link block">About</a>
+    <a data-page="skills" class="nav-link block">Skills</a>
+    <a data-page="projects" class="nav-link block">Projects</a>
+    <a data-page="contact" class="nav-link block">Contact</a>
+  </nav>
+</div>
+
 <div class="flex min-h-screen">
 
-  <!-- Sidebar -->
-  <aside class="w-64 bg-[#020617] p-6 border-r border-gray-800 fixed h-full">
+<!-- Sidebar -->
+<aside class="sidebar bg-[#020617] p-6 border-r border-gray-800 fixed h-full hidden md:block">
+  <h2 class="text-xl font-bold text-blue-500">Vivek Cloud</h2>
+  <p class="text-gray-400 text-sm mb-6">DevOps Engineer</p>
 
-    <div class="mb-8">
-      <h2 class="text-xl font-bold text-blue-500">Vivek Cloud</h2>
-      <p class="text-gray-400 text-sm">Cloud & DevOps Engineer</p>
+  <nav class="space-y-4 text-gray-400">
+    <a data-page="home" class="nav-link block hover:text-blue-400">Home</a>
+    <a data-page="about" class="nav-link block hover:text-blue-400">About</a>
+    <a data-page="skills" class="nav-link block hover:text-blue-400">Skills</a>
+    <a data-page="projects" class="nav-link block hover:text-blue-400">Projects</a>
+    <a data-page="contact" class="nav-link block hover:text-blue-400">Contact</a>
+  </nav>
+</aside>
+
+<!-- Main -->
+<main class="flex-1 p-10 md:ml-[250px]">
+
+<!-- HOME -->
+<section id="home" class="page">
+  <div class="flex justify-between items-center">
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold">
+        Vivek <span class="text-blue-500">Kumar</span>
+      </h1>
+      <p class="text-blue-400 mt-2">DevOps Engineer</p>
+
+      <div class="mt-6 flex gap-4">
+        <button onclick="showOnly('projects')" class="bg-blue-500 px-6 py-2 rounded-lg">Projects</button>
+        <button onclick="showOnly('contact')" class="border px-6 py-2 rounded-lg">Contact</button>
+      </div>
     </div>
 
-    <nav class="space-y-4 text-gray-400">
-      <a data-page="home" class="nav-link cursor-pointer block hover:text-blue-400">Home</a>
-      <a data-page="about" class="nav-link cursor-pointer block hover:text-blue-400">About</a>
-      <a data-page="skills" class="nav-link cursor-pointer block hover:text-blue-400">Skills</a>
-      <a data-page="projects" class="nav-link cursor-pointer block hover:text-blue-400">Projects</a>
-      <a data-page="contact" class="nav-link cursor-pointer block hover:text-blue-400">Contact</a>
-    </nav>
+    <img src="1770623605231.jpg" class="profile w-64 h-64 rounded-full border-4 border-blue-500">
+  </div>
+</section>
 
-  </aside>
+<!-- ABOUT -->
+<section id="about" class="page">
+  <div class="section-card">
+    <h2 class="text-2xl font-bold mb-3">About</h2>
+    <p class="text-gray-400">
+      DevOps Engineer focused on AWS, Docker, Kubernetes and CI/CD pipelines.
+    </p>
+  </div>
+</section>
 
-  <!-- Main Content -->
-  <main class="flex-1 p-10 ml-64">
+<!-- SKILLS -->
+<section id="skills" class="page">
+  <div class="section-card">
+    <h2 class="text-2xl font-bold mb-5">Skills</h2>
 
-    <!-- HOME -->
-    <section id="home" class="page mt-0">
-      <div class="flex justify-between items-center">
+    <div class="flex flex-wrap gap-4">
 
-        <div>
-          <p class="text-gray-400">Hi, I'm</p>
-          <h1 class="text-5xl font-bold">
-            Vivek <span class="text-blue-500">Kumar</span>
-          </h1>
-          <h2 class="text-xl text-blue-400 mt-2">DevOps Engineer</h2>
-
-          <p class="mt-4 text-gray-400 max-w-lg">
-            I help teams build, deploy and scale cloud-native applications using AWS, Docker and Kubernetes.
-          </p>
-
-          <div class="mt-6 flex gap-4">
-            <button id="projectsBtn" class="bg-blue-500 px-6 py-2 rounded-lg hover:bg-blue-600">
-              View Projects
-            </button>
-            <button id="contactBtn" class="border border-gray-600 px-6 py-2 rounded-lg">
-              Contact Me
-            </button>
-          </div>
-
-          <!-- Open to Work -->
-          <div class="mt-4 bg-[#020617] border border-gray-800 px-4 py-2 rounded-lg text-sm text-green-400">
-            🚀 Open to Work - DevOps / Cloud Roles
-          </div>
-        </div>
-
-        <!-- Profile -->
-        <div class="relative">
-          <div class="w-64 h-64 bg-blue-500 blur-3xl opacity-30 rounded-full absolute"></div>
-          <img src="1770623605231.jpg"
-               class="w-64 h-64 rounded-full border-4 border-blue-500 relative">
-        </div>
-
+      <div class="skill-box">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" class="skill-icon">
+        <span>AWS</span>
       </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="page">
-      <h1 class="text-4xl font-bold mb-4">About Me</h1>
-      <p class="text-gray-400 max-w-xl">
-        I am a passionate DevOps Engineer focused on cloud infrastructure, automation, and CI/CD pipelines.
-        I love building scalable systems using AWS and modern tools.
-      </p>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="page">
-      <h1 class="text-4xl font-bold mb-6">Skills</h1>
-
-      <div class="flex flex-wrap gap-4">
-        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">AWS</span>
-        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Docker</span>
-        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Kubernetes</span>
-        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Jenkins</span>
-        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Terraform</span>
-        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Linux</span>
-        <span class="bg-[#020617] px-4 py-2 rounded border border-gray-800">Git</span>
+      <div class="skill-box">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" class="skill-icon">
+        <span>Docker</span>
       </div>
-    </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="page">
-      <h1 class="text-4xl font-bold mb-6">Projects</h1>
-
-      <div class="grid md:grid-cols-3 gap-6">
-
-        <div class="bg-[#020617] p-6 rounded-xl border border-gray-800">
-          <h4 class="text-lg font-semibold">AWS 3-Tier App</h4>
-          <p class="text-gray-400 mt-2">
-            Deployed scalable web application using EC2, RDS, ALB.
-          </p>
-        </div>
-
-        <div class="bg-[#020617] p-6 rounded-xl border border-gray-800">
-          <h4 class="text-lg font-semibold">CI/CD Pipeline</h4>
-          <p class="text-gray-400 mt-2">
-            Built pipeline using Jenkins, Docker & GitHub.
-          </p>
-        </div>
-
-        <div class="bg-[#020617] p-6 rounded-xl border border-gray-800">
-          <h4 class="text-lg font-semibold">Kubernetes App</h4>
-          <p class="text-gray-400 mt-2">
-            Deployed microservices using Kubernetes.
-          </p>
-        </div>
-
+      <div class="skill-box">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" class="skill-icon">
+        <span>Kubernetes</span>
       </div>
-    </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="page">
-      <h1 class="text-4xl font-bold mb-6">Contact Me</h1>
-
-      <div class="bg-[#020617] p-6 rounded-xl border border-gray-800 max-w-xl">
-
-        <p class="text-gray-400 mb-6">
-          Feel free to reach out for opportunities or collaboration.
-        </p>
-
-        <div class="space-y-4 text-gray-300">
-
-          <p>📞 <strong>Phone:</strong>
-            <a href="tel:+919999999999" class="text-blue-400 hover:underline">+91 99999 99999</a>
-          </p>
-
-          <p>📧 <strong>Email:</strong>
-            <a href="mailto:yourmail@gmail.com" class="text-blue-400 hover:underline">yourmail@gmail.com</a>
-          </p>
-
-          <p>💼 <strong>LinkedIn:</strong>
-            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="text-blue-400 hover:underline">
-              linkedin.com/in/yourprofile
-            </a>
-          </p>
-
-          <p>📸 <strong>Instagram:</strong>
-            <a href="https://instagram.com/yourprofile" target="_blank" class="text-blue-400 hover:underline">
-              instagram.com/yourprofile
-            </a>
-          </p>
-
-          <p>💬 <strong>WhatsApp:</strong>
-            <a href="https://wa.me/919999999999" target="_blank" class="text-blue-400 hover:underline">
-              Chat on WhatsApp
-            </a>
-          </p>
-
-          <p>💻 <strong>GitHub:</strong>
-            <a href="https://github.com/yourusername" target="_blank" class="text-blue-400 hover:underline">
-              github.com/yourusername
-            </a>
-          </p>
-
-        </div>
-
+      <div class="skill-box">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" class="skill-icon">
+        <span>Jenkins</span>
       </div>
-    </section>
 
-  </main>
+      <div class="skill-box">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg" class="skill-icon">
+        <span>Terraform</span>
+      </div>
 
+      <div class="skill-box">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" class="skill-icon">
+        <span>Linux</span>
+      </div>
+
+      <div class="skill-box">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="skill-icon">
+        <span>Git</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="page">
+  <div class="section-card">
+    <h2 class="text-2xl font-bold mb-4">Projects</h2>
+    <div class="grid md:grid-cols-3 gap-4">
+      <div class="p-4 bg-[#020617] border rounded-xl">AWS App</div>
+      <div class="p-4 bg-[#020617] border rounded-xl">CI/CD Pipeline</div>
+      <div class="p-4 bg-[#020617] border rounded-xl">Kubernetes</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+  <div class="section-card">
+    <h2 class="text-2xl font-bold mb-4">Contact</h2>
+
+    <p>📞 <a href="tel:+916299638915" class="text-blue-400">6299638915</a></p>
+    <p>📧 <a href="mailto:vivekkumar62041812@gmail.com" class="text-blue-400">vivekkumar62041812@gmail.com</a></p>
+    <p>💼 <a href="https://www.linkedin.com/in/vivek-kumar-263636235/" target="_blank" class="text-blue-400">LinkedIn Profile</a></p>
+
+  </div>
+</section>
+
+</main>
 </div>
 
 <!-- JS -->
 <script>
-  const links = document.querySelectorAll(".nav-link");
-  const pages = document.querySelectorAll(".page");
+const links = document.querySelectorAll(".nav-link");
+const pages = document.querySelectorAll(".page");
 
-  function showAll() {
-    pages.forEach(p => p.style.display = "block");
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+function showAll() {
+  pages.forEach(p => p.style.display = "block");
+}
 
-  function showOnly(id) {
-    pages.forEach(p => {
-      p.style.display = (p.id === id) ? "block" : "none";
-    });
+function showOnly(id) {
+  pages.forEach(p => p.style.display = (p.id === id) ? "block" : "none");
+}
 
-    document.getElementById(id).scrollIntoView({ behavior: "smooth" });
-  }
+links.forEach(link => {
+  link.onclick = () => {
+    const id = link.dataset.page;
+    id === "home" ? showAll() : showOnly(id);
+    document.getElementById("mobileMenu").classList.remove("active");
+  };
+});
 
-  links.forEach(link => {
-    link.addEventListener("click", () => {
-      const id = link.getAttribute("data-page");
+function toggleMenu() {
+  document.getElementById("mobileMenu").classList.toggle("active");
+}
 
-      links.forEach(l => l.classList.remove("text-blue-400"));
-      link.classList.add("text-blue-400");
+showAll();
 
-      if (id === "home") {
-        showAll();
-      } else {
-        showOnly(id);
-      }
-    });
-  });
-
-  // Buttons
-  document.getElementById("projectsBtn").onclick = () => showOnly("projects");
-  document.getElementById("contactBtn").onclick = () => showOnly("contact");
-
-  // Default
-  showAll();
+/* Cursor Glow */
+const glow = document.getElementById("cursor-glow");
+document.addEventListener("mousemove", e => {
+  glow.style.left = e.clientX + "px";
+  glow.style.top = e.clientY + "px";
+});
 </script>
 
 </body>
