@@ -153,7 +153,7 @@ body {
 
 <!-- Sidebar -->
 <aside class="sidebar bg-[#020617] p-6 border-r border-gray-800 fixed h-full hidden md:block">
-  <h2 class="text-xl font-bold text-blue-500">Vivek Cloud</h2>
+  <h2 class="text-xl font-bold text-blue-500">Vivek Kumar</h2>
   <p class="text-gray-400 text-sm mb-6">DevOps Engineer</p>
 
   <nav class="space-y-4 text-gray-400">
@@ -183,7 +183,7 @@ body {
       </div>
     </div>
 
-    <img src="1770623605231.jpg" class="profile w-64 h-64 rounded-full border-4 border-blue-500">
+    <img src="image.jpeg" class="profile w-64 h-64 rounded-full border-4 border-blue-500">
   </div>
 </section>
 
@@ -205,7 +205,7 @@ body {
     <div class="flex flex-wrap gap-4">
 
       <div class="skill-box">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpI4hrM1YiLOPKm9H4gSYcTExTukYNLx8zYQ&s" class="skill-icon">
+        <img src="aws-images.jpg" class="skill-icon">
         <span>AWS Cloud</span>
       </div>
 
@@ -220,8 +220,9 @@ body {
       </div>
 
       <div class="skill-box">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJH4_-gBzc5VO28Ybb5N0rmDsMRnrD8FoyBA&s" class="skill-icon">
+        <img src="bash-logo.jpg" class="skill-icon">
         <span>Bash Scripting</span>
+
       </div>
       
       <div class="skill-box">
@@ -254,15 +255,136 @@ body {
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="page">
-  <div class="section-card">
-    <h2 class="text-2xl font-bold mb-4">Projects</h2>
-    <div class="grid md:grid-cols-3 gap-4">
-      <div class="p-4 bg-[#020617] border rounded-xl">Deploy a Node JS Application on Ec2</div>
-      
-    </div>
-  </div>
-</section>
+<section id="projects" class="page hidden w-full">
+        <div class="section-card">
+          
+          <div class="border-b border-slate-800 pb-4 mb-6">
+            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-blue-500">Projects</h2>
+            <p class="text-slate-400 text-xs sm:text-sm mt-1">
+              Tap or click a project card to view and download the complete technical setup guide in Microsoft Word (.docx) format.
+            </p>
+          </div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
+            
+            <div 
+              onclick="window.location.href='docs/NodeJS_EC2_Documentation.docx'" 
+              class="group relative flex flex-col justify-between p-5 sm:p-6 bg-[#020617] border border-slate-800 rounded-xl hover:border-blue-500/50 transition-all duration-300 cursor-pointer overflow-hidden min-h-[220px] sm:min-h-[240px]"
+            >
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 hidden md:block"></div>
+              
+              <div class="relative z-10 w-full">
+                <div class="flex items-start justify-between gap-3 mb-3">
+                  <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-blue-400 transition duration-200 leading-snug">
+                    Node.js Application Deployment on AWS EC2
+                  </h3>
+                  <span class="flex-shrink-0 bg-blue-950 text-blue-400 border border-blue-800 text-[10px] sm:text-[11px] font-extrabold tracking-wider px-2 py-0.5 rounded shadow-sm">
+                    .DOCX
+                  </span>
+                </div>
+                
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                  Configured and engineered an automated pipeline deployment workflow for a live Node.js application running on cloud EC2 instances secured behind highly restrictive AWS security groups.
+                </p>
+              </div>
+
+              <div class="relative z-10 flex items-center justify-between mt-auto pt-4 border-t border-slate-900/60">
+                <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                  <span class="text-[10px] sm:text-xs bg-slate-900 border border-slate-800/80 px-2.5 py-1 rounded-md text-slate-400 font-medium">AWS EC2</span>
+                  <span class="text-[10px] sm:text-xs bg-slate-900 border border-slate-800/80 px-2.5 py-1 rounded-md text-slate-400 font-medium">Linux</span>
+                  <span class="text-[10px] sm:text-xs bg-slate-900 border border-slate-800/80 px-2.5 py-1 rounded-md text-slate-400 font-medium">Git</span>
+                </div>
+                
+                <a 
+                  href="docs/NodeJS_EC2_Documentation.docx" 
+                  download 
+                  class="text-xs font-semibold text-blue-500 group-hover:text-blue-400 flex items-center gap-1 transition-colors duration-200 whitespace-nowrap"
+                  onclick="event.stopPropagation();"
+                >
+                  Get Docs <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                </a>
+              </div>
+            </div>
+
+
+            <div 
+              onclick="window.location.href='docs/NodeJS_EC2_Documentation.docx'" 
+              class="group relative flex flex-col justify-between p-5 sm:p-6 bg-[#020617] border border-slate-800 rounded-xl hover:border-blue-500/50 transition-all duration-300 cursor-pointer overflow-hidden min-h-[220px] sm:min-h-[240px]"
+            >
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 hidden md:block"></div>
+              
+              <div class="relative z-10 w-full">
+                <div class="flex items-start justify-between gap-3 mb-3">
+                  <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-blue-400 transition duration-200 leading-snug">
+                    Node.js Application Deployment on AWS EC2
+                  </h3>
+                  <span class="flex-shrink-0 bg-blue-950 text-blue-400 border border-blue-800 text-[10px] sm:text-[11px] font-extrabold tracking-wider px-2 py-0.5 rounded shadow-sm">
+                    .DOCX
+                  </span>
+                </div>
+                
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                  Configured and engineered an automated pipeline deployment workflow for a live Node.js application running on cloud EC2 instances secured behind highly restrictive AWS security groups.
+                </p>
+              </div>
+
+              <div class="relative z-10 flex items-center justify-between mt-auto pt-4 border-t border-slate-900/60">
+                <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                  <span class="text-[10px] sm:text-xs bg-slate-900 border border-slate-800/80 px-2.5 py-1 rounded-md text-slate-400 font-medium">AWS EC2</span>
+                  <span class="text-[10px] sm:text-xs bg-slate-900 border border-slate-800/80 px-2.5 py-1 rounded-md text-slate-400 font-medium">Linux</span>
+                </div>
+                
+                <a 
+                  href="docs/NodeJS_EC2_Documentation.docx" 
+                  download 
+                  class="text-xs font-semibold text-blue-500 group-hover:text-blue-400 flex items-center gap-1 transition-colors duration-200 whitespace-nowrap"
+                  onclick="event.stopPropagation();"
+                >
+                  Get Docs <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                </a>
+              </div>
+            </div>
+
+            <div 
+              onclick="window.location.href='docs/Kubernetes_Cluster_Setup.docx'" 
+              class="group relative flex flex-col justify-between p-5 sm:p-6 bg-[#020617] border border-slate-800 rounded-xl hover:border-blue-500/50 transition-all duration-300 cursor-pointer overflow-hidden min-h-[220px] sm:min-h-[240px]"
+            >
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-600/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 hidden md:block"></div>
+              
+              <div class="relative z-10 w-full">
+                <div class="flex items-start justify-between gap-3 mb-3">
+                  <h3 class="text-base sm:text-lg font-bold text-white group-hover:text-blue-400 transition duration-200 leading-snug">
+                    Highly Available Kubernetes Cluster Setup
+                  </h3>
+                  <span class="flex-shrink-0 bg-blue-950 text-blue-400 border border-blue-800 text-[10px] sm:text-[11px] font-extrabold tracking-wider px-2 py-0.5 rounded shadow-sm">
+                    .DOCX
+                  </span>
+                </div>
+                
+                <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-4">
+                  Multi-node architecture guide utilizing kubeadm, configuring high-availability control planes, dynamic persistent volume mapping, and custom ingress traffic rules.
+                </p>
+              </div>
+
+              <div class="relative z-10 flex items-center justify-between mt-auto pt-4 border-t border-slate-900/60">
+                <div class="flex flex-wrap gap-1.5 sm:gap-2">
+                  <span class="text-[10px] sm:text-xs bg-slate-900 border border-slate-800/80 px-2.5 py-1 rounded-md text-slate-400 font-medium">Kubernetes</span>
+                  <span class="text-[10px] sm:text-xs bg-slate-900 border border-slate-800/80 px-2.5 py-1 rounded-md text-slate-400 font-medium">Docker</span>
+                </div>
+                <a 
+                  href="docs/Kubernetes_Cluster_Setup.docx" 
+                  download 
+                  class="text-xs font-semibold text-blue-500 group-hover:text-blue-400 flex items-center gap-1 transition-colors duration-200 whitespace-nowrap"
+                  onclick="event.stopPropagation();"
+                >
+                  Get Docs <span class="group-hover:translate-x-1 transition-transform duration-200">→</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
 <!-- CONTACT -->
 <section id="contact" class="page">
